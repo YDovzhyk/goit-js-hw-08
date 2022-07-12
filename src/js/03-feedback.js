@@ -8,14 +8,12 @@ const userData = {};
 
 const fillFormFields = () => { //Функція коли поля заповнені
     const userDataFromLS = localStorageApi.load(CONTACT_FORM_LOCAL_STORAGE_KEY); //отримуємо данні з LS
-    console.log(userDataFromLS);
 
     if (userDataFromLS === undefined) { //Перевіряємо чи є якісь значення в localStorage
         return;
     }
 
     const formElements = contactFormEl.elements; //Отримуємо елементи форми Input
-    console.log(contactFormEl.elements);
 
     for (const key in userDataFromLS) { // Перебираємо властивості з LS
     if (userDataFromLS.hasOwnProperty(key)) {  //перевіряємо чи це влансні властивості обєкту
